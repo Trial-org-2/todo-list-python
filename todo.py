@@ -8,7 +8,7 @@ client = pymongo.MongoClient('mongodb://localhost')
 database = client.todo_list
 tasks_dao = TaskDAO(database)
 
-@app.route('priotiy')
+@app.route('/priotiy')
 def priority():
     return {}
 
