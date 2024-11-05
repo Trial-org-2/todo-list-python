@@ -1,5 +1,5 @@
 # coding=utf-8
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request
 from task import TaskDAO
 import pymongo
 
@@ -7,6 +7,10 @@ app = Flask('todoapp')
 client = pymongo.MongoClient('mongodb://localhost')
 database = client.todo_list
 tasks_dao = TaskDAO(database)
+
+@app.route('/priotiy')
+def priority():
+    return {}
 
 
 @app.route('/tasks')
